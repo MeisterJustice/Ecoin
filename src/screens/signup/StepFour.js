@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput} from 'react-native';
 import Styles from '../../Styles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const StepFour = (props) => {
   return (
@@ -54,12 +53,12 @@ const StepFour = (props) => {
         </View>
         <View style={[Styles.inputWrapper, {marginRight: '15%'}]}>
           <Text style={Styles.signupDescription}>
-            By Clicking Get Started, You agree to our
-            <TouchableOpacity>
-              <Text style={[Styles.primaryColor, {marginTop: '5%'}]}>
-                Terms And Conditions.
-              </Text>
-            </TouchableOpacity>
+            By Clicking Get Started, You agree to our{' '}
+            <Text
+              onPress={() => console.log('pressed')}
+              style={Styles.primaryColor}>
+              Terms And Conditions.
+            </Text>
           </Text>
         </View>
       </View>

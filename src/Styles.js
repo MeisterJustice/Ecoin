@@ -171,6 +171,9 @@ const Styles = StyleSheet.create({
   scrollView: {
     flexGrow: 1,
   },
+  center: {
+    alignSelf: 'center',
+  },
   wrapper: {
     marginLeft: '10%',
     marginRight: '10%',
@@ -216,23 +219,6 @@ const Styles = StyleSheet.create({
   inputStyle: {
     backgroundColor: '#F0FFEB',
     borderRadius: 6,
-  },
-
-  inputCircleStyle: {
-    width: 45,
-    height: 45,
-    borderColor: '#6FCF97',
-    borderRadius: 45,
-    backgroundColor: '#F0FFEB',
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    fontSize: 16,
-    borderWidth: 1,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 10,
   },
   inputWrapper: {
     marginTop: '10%',

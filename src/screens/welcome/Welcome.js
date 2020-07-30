@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import Styles from '../Styles';
-import Statusbar from './Statusbar';
+import Styles from '../../Styles';
+import Statusbar from '../../components/Statusbar';
 
 const Welcome = ({text, title, bgColor, image, lineColor, top}) => {
   return (

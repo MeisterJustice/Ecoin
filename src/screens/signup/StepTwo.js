@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
 import Styles from '../../Styles';
 import Statusbar from '../../components/Statusbar';
+import SmoothPinCodeInput from 'react-native-smooth-pincode-input';
 
 const StepTwo = (props) => {
   return (
@@ -20,82 +21,46 @@ const StepTwo = (props) => {
         </Text>
       </View>
       <View style={Styles.inputWrapper}>
-        <View style={Styles.inputAlignItems}>
-          <View>
-            <TextInput
-              placeholder="*"
-              autoFocus={true}
-              returnKeyType={'next'}
-              secureTextEntry={true}
-              placeholderTextColor="rgba(0, 0, 0, 0.61)"
-              style={Styles.inputCircleStyle}
-              keyboardType="numeric"
-              maxLength={1}
-              value={props.otp1}
-              onChangeText={props.handleOtp1Change}
-              //   onSubmitEditing={this.handleFirstInputSubmit}
-            />
-          </View>
-          <View>
-            <TextInput
-              placeholder="*"
-              secureTextEntry={true}
-              //   autoFocus={this.state.firstInputFocus}
-              returnKeyType={'next'}
-              placeholderTextColor="rgba(0, 0, 0, 0.61)"
-              style={Styles.inputCircleStyle}
-              keyboardType="numeric"
-              maxLength={1}
-              value={props.otp2}
-              onChangeText={props.handleOtp2Change}
-              //   onSubmitEditing={this.handleFirstInputSubmit}
-            />
-          </View>
-          <View>
-            <TextInput
-              placeholder="*"
-              secureTextEntry={true}
-              //   autoFocus={this.state.firstInputFocus}
-              returnKeyType={'next'}
-              placeholderTextColor="rgba(0, 0, 0, 0.61)"
-              style={Styles.inputCircleStyle}
-              keyboardType="numeric"
-              maxLength={1}
-              value={props.otp3}
-              onChangeText={props.handleOtp3Change}
-              //   onSubmitEditing={this.handleFirstInputSubmit}
-            />
-          </View>
-          <View>
-            <TextInput
-              placeholder="*"
-              secureTextEntry={true}
-              //   autoFocus={this.state.firstInputFocus}
-              returnKeyType={'next'}
-              placeholderTextColor="rgba(0, 0, 0, 0.61)"
-              style={Styles.inputCircleStyle}
-              keyboardType="numeric"
-              maxLength={1}
-              value={props.otp4}
-              onChangeText={props.handleOtp4Change}
-              //   onSubmitEditing={this.handleFirstInputSubmit}
-            />
-          </View>
-          <View>
-            <TextInput
-              placeholder="*"
-              secureTextEntry={true}
-              //   autoFocus={this.state.firstInputFocus}
-              returnKeyType={'next'}
-              placeholderTextColor="rgba(0, 0, 0, 0.61)"
-              style={Styles.inputCircleStyle}
-              keyboardType="numeric"
-              maxLength={1}
-              value={props.otp5}
-              onChangeText={props.handleOtp5Change}
-              //   onSubmitEditing={this.handleFirstInputSubmit}
-            />
-          </View>
+        <View style={Styles.center}>
+          <SmoothPinCodeInput
+            password
+            autoFocus={true}
+            placeholder=" * "
+            mask="﹡"
+            codeLength={5}
+            cellStyle={{
+              borderWidth: 2,
+              borderRadius: 24,
+              borderColor: '#6FCF97',
+              backgroundColor: '#F0FFEB',
+              shadowColor: '#000',
+              shadowOffset: {
+                width: 0,
+                height: 7,
+              },
+              shadowOpacity: 0.41,
+              shadowRadius: 9.11,
+
+              elevation: 14,
+            }}
+            cellStyleFocused={{
+              borderColor: '#6FCF97',
+              backgroundColor: '#F0FFEB',
+            }}
+            textStyle={{
+              fontSize: 24,
+              color: 'rgba(0, 0, 0, 0.61)',
+            }}
+            textStyleFocused={{
+              color: 'rgba(0, 0, 0, 0.61)',
+            }}
+            editable={true}
+            onFulfill={props.handleOtpChange}
+            keyboardType="number-pad"
+            value={props.otp}
+            restrictToNumbers={true}
+            onTextChange={props.handleOtpChange}
+          />
         </View>
       </View>
     </View>

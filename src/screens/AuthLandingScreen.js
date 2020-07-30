@@ -6,6 +6,7 @@ import Statusbar from '../components/Statusbar';
 const AuthLanding = (props) => {
   return (
     <View style={Styles.container}>
+      <Statusbar barStyle="translucent" backgroundColor="transparent" />
       <View style={Styles.authLandingImageWrapper}>
         <Image
           style={Styles.authLandingImage}

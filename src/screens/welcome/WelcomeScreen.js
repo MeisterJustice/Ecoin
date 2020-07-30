@@ -1,9 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import {View, StatusBar, Text, Dimensions} from 'react-native';
-import Styles from '../Styles';
+import Styles from '../../Styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Statusbar from '../components/Statusbar';
-import Welcome from '../components/Welcome';
+import Welcome from './Welcome';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 const slides = [

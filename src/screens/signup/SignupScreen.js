@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Statusbar from '../../components/Statusbar';
 import {
   View,
-  Keyboard,
   TouchableOpacity,
   Text,
   ScrollView,
@@ -23,11 +22,7 @@ class SignupScreen extends Component {
     super(props);
     this.state = {
       mobileNumber: '',
-      otp1: '',
-      otp2: '',
-      otp3: '',
-      otp4: '',
-      otp5: '',
+      otp: '',
       page: 0,
       screenHeight: 0,
       firstInputFocus: true,
@@ -45,7 +40,11 @@ class SignupScreen extends Component {
   }
 
   nextPage = () => {
-    this.setState({page: this.state.page + 1});
+    if (this.state.page !== 3) {
+      this.setState({page: this.state.page + 1});
+    } else {
+      this.props.navigation.navigate('forgotPassword');
+    }
   };
   previousPage = () => {
     this.setState({page: this.state.page - 1});
@@ -55,30 +54,11 @@ class SignupScreen extends Component {
       mobileNumber: mobileNumber.replace(/[^0-9]/g, ''),
     });
   };
-  handleOtp1Change = (otp1) => {
+  handleOtpChange = (otp) => {
     this.setState({
-      otp1: otp1.replace(/[^0-9]/g, ''),
+      otp: otp.replace(/[^0-9]/g, ''),
     });
-  };
-  handleOtp2Change = (otp2) => {
-    this.setState({
-      otp2: otp2.replace(/[^0-9]/g, ''),
-    });
-  };
-  handleOtp3Change = (otp3) => {
-    this.setState({
-      otp3: otp3.replace(/[^0-9]/g, ''),
-    });
-  };
-  handleOtp4Change = (otp4) => {
-    this.setState({
-      otp4: otp4.replace(/[^0-9]/g, ''),
-    });
-  };
-  handleOtp5Change = (otp5) => {
-    this.setState({
-      otp5: otp5.replace(/[^0-9]/g, ''),
-    });
+    console.log(this.state.otp);
   };
   handlePasswordChange = (password) => {
     this.setState({
@@ -119,11 +99,7 @@ class SignupScreen extends Component {
     const {
       mobileNumber,
       page,
-      otp1,
-      otp2,
-      otp3,
-      otp4,
-      otp5,
+      otp,
       password,
       confirmPassword,
       firstName,
@@ -136,18 +112,7 @@ class SignupScreen extends Component {
         mobileNumber={mobileNumber}
         handleMobileNumberChange={this.handleMobileNumberChange}
       />,
-      <StepTwo
-        otp1={otp1}
-        otp2={otp2}
-        otp3={otp3}
-        otp4={otp4}
-        otp5={otp5}
-        handleOtp1Change={this.handleOtp1Change}
-        handleOtp2Change={this.handleOtp2Change}
-        handleOtp3Change={this.handleOtp3Change}
-        handleOtp4Change={this.handleOtp4Change}
-        handleOtp5Change={this.handleOtp5Change}
-      />,
+      <StepTwo otp={otp} handleOtpChange={this.handleOtpChange} />,
       <StepThree
         password={password}
         confirmPassword={confirmPassword}
