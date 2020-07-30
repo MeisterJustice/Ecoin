@@ -15,16 +15,29 @@ const AuthLanding = (props) => {
           resizeMode="cover"
         />
       </View>
+
       <View style={Styles.authLandingButtonWrapper}>
-        <TouchableOpacity>
-          <View style={Styles.authLandingLoginButton}>
-            <Text style={Styles.authLandingLoginText}>Log In</Text>
-          </View>
-        </TouchableOpacity>
-        <FluidButton
-          onPress={() => props.navigation.navigate('signUp')}
-          text="Register"
-        />
+        <View>
+          <Text
+            style={[
+              Styles.primaryColor,
+              Styles.authLandingTitle,
+              Styles.center,
+            ]}>
+            CoinBox
+          </Text>
+        </View>
+        <View style={Styles.authLandingMargin}>
+          <TouchableOpacity>
+            <View style={Styles.authLandingLoginButton}>
+              <Text style={Styles.authLandingLoginText}>Log In</Text>
+            </View>
+          </TouchableOpacity>
+          <FluidButton
+            onPress={() => props.navigation.navigate('signUp')}
+            text="Register"
+          />
+        </View>
       </View>
     </View>
   );

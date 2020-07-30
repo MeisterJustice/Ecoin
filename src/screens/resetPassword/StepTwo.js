@@ -1,14 +1,12 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import Styles from '../../Styles';
-import Button from '../../components/buttons/Button';
-import TextInput from '../../components/textInputs/TextInput';
 import FluidButton from '../../components/buttons/FluidButton';
 
 const StepTwo = (props) => {
   return (
     <View style={Styles.flex}>
-      <View style={Styles.center}>
+      <View style={Styles.container}>
         <View style={Styles.successImageWrapper}>
           <Image
             style={Styles.successImage}
@@ -17,7 +15,8 @@ const StepTwo = (props) => {
           />
         </View>
         <View style={Styles.successViewWrapper}>
-          <Text style={[Styles.successTitle, Styles.primaryColor]}>
+          <Text
+            style={[Styles.successTitle, Styles.primaryColor, Styles.center]}>
             Success
           </Text>
         </View>
@@ -35,7 +34,7 @@ const StepTwo = (props) => {
         </View>
       </View>
       <View style={Styles.successButtonWrapper}>
-        <View style={[Styles.center, {marginTop: '4'}]}>
+        <View style={[Styles.center, {marginTop: '4%'}]}>
           <FluidButton
             onPress={() => console.log('pressed')}
             text="Go To Log In"

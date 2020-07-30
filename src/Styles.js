@@ -144,6 +144,11 @@ const Styles = StyleSheet.create({
     lineHeight: 30,
     color: '#BAE1B0',
   },
+  authLandingTitle: {
+    fontSize: 30,
+    fontWeight: '600',
+    lineHeight: 41,
+  },
   authLandingSignupText: {
     fontFamily: 'Poppins',
     fontWeight: '700',
@@ -162,8 +167,11 @@ const Styles = StyleSheet.create({
     borderColor: '#6FCF97',
     borderRadius: 5,
   },
+  authLandingMargin: {
+    marginTop: '10%',
+  },
   authLandingButtonWrapper: {
-    marginTop: '120%',
+    marginTop: '110%',
     alignSelf: 'center',
   },
 
@@ -257,6 +265,7 @@ const Styles = StyleSheet.create({
   successImageWrapper: {
     height: '' + (250 / Dimensions.get('window').height) * 100 + '%',
     width: '' + (350 / Dimensions.get('window').height) * 100 + '%',
+    alignSelf: 'center',
   },
   successImage: {
     height: '100%',
