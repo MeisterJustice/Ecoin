@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text} from 'react-native';
 import Styles from '../../Styles';
+import TextInput from '../../components/textInputs/TextInput';
 
 const StepThree = (props) => {
   return (
@@ -22,21 +23,17 @@ const StepThree = (props) => {
         <View>
           <TextInput
             placeholder="Enter Your Password"
-            secureTextEntry={true}
-            placeholderTextColor="rgba(0, 0, 0, 0.61)"
-            style={Styles.inputStyle}
+            isSecure={true}
             value={props.password}
-            onChangeText={props.handlePasswordChange}
+            onChange={props.handlePasswordChange}
           />
         </View>
         <View style={Styles.inputMargin}>
           <TextInput
             placeholder="Confirm Password"
-            secureTextEntry={true}
-            placeholderTextColor="rgba(0, 0, 0, 0.61)"
-            style={Styles.inputStyle}
+            isSecure={true}
             value={props.confirmPassword}
-            onChangeText={props.handleConfirmPasswordChange}
+            onChange={props.handleConfirmPasswordChange}
           />
         </View>
       </View>

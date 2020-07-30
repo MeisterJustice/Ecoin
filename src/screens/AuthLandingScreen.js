@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image, Button, TouchableOpacity} from 'react-native';
 import Styles from '../Styles';
 import Statusbar from '../components/Statusbar';
+import FluidButton from '../components/buttons/FluidButton';
 
 const AuthLanding = (props) => {
   return (
@@ -20,11 +21,10 @@ const AuthLanding = (props) => {
             <Text style={Styles.authLandingLoginText}>Log In</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => props.navigation.navigate('signUp')}>
-          <View style={Styles.authLandingSignupButton}>
-            <Text style={Styles.authLandingSignupText}>Register</Text>
-          </View>
-        </TouchableOpacity>
+        <FluidButton
+          onPress={() => props.navigation.navigate('signUp')}
+          text="Register"
+        />
       </View>
     </View>
   );

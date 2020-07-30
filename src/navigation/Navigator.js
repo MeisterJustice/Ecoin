@@ -7,6 +7,7 @@ import WelcomeScreen from '../screens/welcome/WelcomeScreen';
 import AuthLandingScreen from '../screens/AuthLandingScreen';
 import SignupScreen from '../screens/signup/SignupScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
+import ResetPasswordScreen from '../screens/resetPassword/ResetPasswordScreen';
 
 const Stack = createStackNavigator();
 
@@ -32,11 +33,26 @@ class Navigator extends Component {
             gestureEnabled: true,
             headerStyle: {
               backgroundColor: 'rgba(255,255,255,0.0005)',
+              elevation: 0,
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowOpacity: 0,
+              shadowRadius: 0,
             },
+
             headerTitleStyle: {
               fontWeight: 'bold',
+              fontSize: 18,
+              fontFamily: 'Poppins',
+              lineHeight: 27,
             },
             headerTintColor: '#6FCF97',
+            headerBackTitleVisible: false,
+            cardStyle: {
+              backgroundColor: '#FFFFFF',
+            },
           }}>
           <Stack.Screen
             name="splash"
@@ -56,6 +72,11 @@ class Navigator extends Component {
           <Stack.Screen
             name="forgotPassword"
             component={ForgotPasswordScreen}
+            options={{title: 'Forgot Password', headerShown: true}}
+          />
+          <Stack.Screen
+            name="resetPassword"
+            component={ResetPasswordScreen}
             options={{title: 'Reset Password', headerShown: true}}
           />
         </Stack.Navigator>

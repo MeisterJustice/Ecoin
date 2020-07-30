@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text} from 'react-native';
+import TextInput from '../../components/textInputs/TextInput';
 import Styles from '../../Styles';
 
 const StepFour = (props) => {
@@ -17,38 +18,30 @@ const StepFour = (props) => {
         <View>
           <TextInput
             placeholder="First Name"
-            placeholderTextColor="rgba(0, 0, 0, 0.61)"
-            style={Styles.inputStyle}
             value={props.firstName}
-            onChangeText={props.handleFirstNameChange}
+            onChange={props.handleFirstNameChange}
           />
         </View>
         <View style={Styles.inputMargin}>
           <TextInput
             placeholder="Last Name"
-            placeholderTextColor="rgba(0, 0, 0, 0.61)"
-            style={Styles.inputStyle}
             value={props.lastName}
-            onChangeText={props.handleLastNameChange}
+            onChange={props.handleLastNameChange}
           />
         </View>
         <View style={Styles.inputMargin}>
           <TextInput
             placeholder="Email Address"
-            placeholderTextColor="rgba(0, 0, 0, 0.61)"
             keyboardType="email-address"
-            style={Styles.inputStyle}
             value={props.emailAddress}
-            onChangeText={props.handleEmailAddressChange}
+            onChange={props.handleEmailAddressChange}
           />
         </View>
         <View style={Styles.inputMargin}>
           <TextInput
             placeholder="Invite Code"
-            placeholderTextColor="rgba(0, 0, 0, 0.61)"
-            style={Styles.inputStyle}
             value={props.inviteCode}
-            onChangeText={props.handleInviteCodeChange}
+            onChange={props.handleInviteCodeChange}
           />
         </View>
         <View style={[Styles.inputWrapper, {marginRight: '15%'}]}>

@@ -11,7 +11,7 @@ const slides = [
     title: 'Save',
     text:
       'Create savings in form of boxes and get compound interest on your savings',
-    image: require('../public/piggy.png'),
+    image: require('../../public/piggy.png'),
     backgroundColor: '#6FCF97',
     lineColor: '#219653',
     top: '' + (195 / Dimensions.get('window').height) * 100 + '%',
@@ -21,7 +21,7 @@ const slides = [
     title: 'Borrow Money',
     text:
       'Get more than 100% of current value of savings by getting your colleagues faciltate your loan',
-    image: require('../public/refer1.png'),
+    image: require('../../public/refer1.png'),
     backgroundColor: '#67E66A',
     lineColor: '#49914a',
     top: '' + (100 / Dimensions.get('window').height) * 100 + '%',
@@ -31,7 +31,7 @@ const slides = [
     title: 'Refer and Earn',
     text:
       'Invite a friend and get commissions when your friend saves with CoinBox',
-    image: require('../public/piggy2.png'),
+    image: require('../../public/piggy2.png'),
     backgroundColor: '#FFF8B3',
     lineColor: '#c7ba48',
     top: '' + (165 / Dimensions.get('window').height) * 100 + '%',

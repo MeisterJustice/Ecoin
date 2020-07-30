@@ -146,7 +146,7 @@ const Styles = StyleSheet.create({
   },
   authLandingSignupText: {
     fontFamily: 'Poppins',
-    fontWeight: '600',
+    fontWeight: '700',
     fontSize: 18,
     lineHeight: 30,
     color: '#FFFFFF',
@@ -228,7 +228,7 @@ const Styles = StyleSheet.create({
   },
   inputButton: {
     width: 190,
-    height: 47,
+    height: 50,
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -252,6 +252,26 @@ const Styles = StyleSheet.create({
   },
   inputMargin: {
     marginTop: '5%',
+  },
+  // reset success page
+  successImageWrapper: {
+    height: '' + (250 / Dimensions.get('window').height) * 100 + '%',
+    width: '' + (350 / Dimensions.get('window').height) * 100 + '%',
+  },
+  successImage: {
+    height: '100%',
+    width: '100%',
+  },
+  successViewWrapper: {
+    marginTop: '5%',
+  },
+  successTitle: {
+    fontSize: 28,
+    lineHeight: 42,
+    fontWeight: 'bold',
+  },
+  successButtonWrapper: {
+    height: '30%',
   },
 });
 

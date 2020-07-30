@@ -14,6 +14,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import StepThree from './StepThree';
 import StepFour from './StepFour';
 import {Header} from 'react-native-elements';
+import Button from '../../components/buttons/Button';
 
 const {height} = Dimensions.get('window');
 
@@ -51,12 +52,12 @@ class SignupScreen extends Component {
   };
   handleMobileNumberChange = (mobileNumber) => {
     this.setState({
-      mobileNumber: mobileNumber.replace(/[^0-9]/g, ''),
+      mobileNumber,
     });
   };
   handleOtpChange = (otp) => {
     this.setState({
-      otp: otp.replace(/[^0-9]/g, ''),
+      otp,
     });
     console.log(this.state.otp);
   };
@@ -142,7 +143,7 @@ class SignupScreen extends Component {
               <TouchableOpacity onPress={this.previousPage}>
                 <AntDesign
                   name="arrowleft"
-                  size={30}
+                  size={23}
                   style={[Styles.primaryColor, {marginLeft: '40%'}]}
                 />
               </TouchableOpacity>
@@ -159,15 +160,10 @@ class SignupScreen extends Component {
           contentContainerStyle={Styles.scrollView}
           onContentSizeChange={this.onContentSizeChange}>
           {pages[page]}
-          <TouchableOpacity
-            style={Styles.inputButtonWrapper}
-            onPress={this.nextPage}>
-            <View style={[Styles.inputButton, {marginBottom: 80}]}>
-              <Text style={Styles.inputText}>
-                {page === 3 ? 'Get Started' : 'Continue'}
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <Button
+            onPress={this.nextPage}
+            text={page === 3 ? 'Get Started' : 'Continue'}
+          />
         </ScrollView>
       </View>
     );

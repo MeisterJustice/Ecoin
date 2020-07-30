@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
 import Styles from '../../Styles';
-import Statusbar from '../../components/Statusbar';
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input';
 
 const StepTwo = (props) => {

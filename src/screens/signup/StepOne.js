@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import Styles from '../../Styles';
+import TextInput from '../../components/textInputs/TextInput';
 import Statusbar from '../../components/Statusbar';
 
 const StepOne = (props) => {
@@ -22,13 +23,11 @@ const StepOne = (props) => {
       <View style={Styles.inputWrapper}>
         <View>
           <TextInput
-            placeholder="Enter 11 Digits Mobile Number"
-            placeholderTextColor="rgba(0, 0, 0, 0.61)"
-            style={Styles.inputStyle}
-            keyboardType="numeric"
+            placeholder="Enter 11 Digit Mobile Number"
+            keyboardType="number-pad"
             maxLength={11}
             value={props.mobileNumber}
-            onChangeText={props.handleMobileNumberChange}
+            onChange={props.handleMobileNumberChange}
           />
         </View>
       </View>
