@@ -19,14 +19,14 @@ const StepFour = (props) => {
           <TextInput
             placeholder="First Name"
             value={props.firstName}
-            onChange={props.handleFirstNameChange}
+            onChange={props.onChange('firstName')}
           />
         </View>
         <View style={Styles.inputMargin}>
           <TextInput
             placeholder="Last Name"
             value={props.lastName}
-            onChange={props.handleLastNameChange}
+            onChange={props.onChange('lastName')}
           />
         </View>
         <View style={Styles.inputMargin}>
@@ -34,14 +34,14 @@ const StepFour = (props) => {
             placeholder="Email Address"
             keyboardType="email-address"
             value={props.emailAddress}
-            onChange={props.handleEmailAddressChange}
+            onChange={props.onChange('emailAddress')}
           />
         </View>
         <View style={Styles.inputMargin}>
           <TextInput
             placeholder="Invite Code"
             value={props.inviteCode}
-            onChange={props.handleInviteCodeChange}
+            onChange={props.onChange('inviteCode')}
           />
         </View>
         <View style={[Styles.inputWrapper, {marginRight: '15%'}]}>

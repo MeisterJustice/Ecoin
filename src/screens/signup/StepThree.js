@@ -25,7 +25,7 @@ const StepThree = (props) => {
             placeholder="Enter Your Password"
             isSecure={true}
             value={props.password}
-            onChange={props.handlePasswordChange}
+            onChange={props.onChange('password')}
           />
         </View>
         <View style={Styles.inputMargin}>
@@ -33,7 +33,7 @@ const StepThree = (props) => {
             placeholder="Confirm Password"
             isSecure={true}
             value={props.confirmPassword}
-            onChange={props.handleConfirmPasswordChange}
+            onChange={props.onChange('confirmPassword')}
           />
         </View>
       </View>

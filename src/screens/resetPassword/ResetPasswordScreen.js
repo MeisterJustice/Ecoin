@@ -1,48 +1,36 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 
-class ResetPasswordScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: 0,
-      password: '',
-      confirmPassword: '',
-    };
-  }
+const ResetPasswordScreen = () => {
+  const [page, setPage] = useState(0);
+  const [password, setPassword] = useState({
+    password: '',
+    confirmPassword: '',
+  });
 
-  nextPage = () => {
-    this.setState({page: this.state.page + 1});
+  const nextPage = () => {
+    setPage(page + 1);
   };
-  previousPage = () => {
-    this.setState({page: this.state.page - 1});
+  const previousPage = () => {
+    setPage(page - 1);
   };
-  handlePasswordChange = (password) => {
-    this.setState({
-      password,
+  const onChange = (name) => (value) =>
+    setPassword({
+      ...password,
+      [name]: value,
     });
-  };
-  handleConfirmPasswordChange = (confirmPassword) => {
-    this.setState({
-      confirmPassword,
-    });
-  };
-
-  render() {
-    const {page, password, confirmPassword} = this.state;
-    const pages = [
-      <StepOne
-        password={password}
-        handlePasswordChange={this.handlePasswordChange}
-        confirmPassword={confirmPassword}
-        handleConfirmPasswordChange={this.handleConfirmPasswordChange}
-        nextPage={this.nextPage}
-      />,
-      <StepTwo previousPage={this.previousPage} />,
-    ];
-    return <>{pages[page]}</>;
-  }
-}
+  const pages = [
+    <StepOne
+      password={password.password}
+      onChange={onChange}
+      handlePasswordChange={this.handlePasswordChange}
+      confirmPassword={password.confirmPassword}
+      nextPage={nextPage}
+    />,
+    <StepTwo previousPage={previousPage} />,
+  ];
+  return <>{pages[page]}</>;
+};
 
 export default ResetPasswordScreen;

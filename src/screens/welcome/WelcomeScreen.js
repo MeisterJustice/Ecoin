@@ -1,5 +1,5 @@
-import React, {Component, Fragment} from 'react';
-import {View, StatusBar, Text, Dimensions} from 'react-native';
+import React from 'react';
+import {View, Dimensions} from 'react-native';
 import Styles from '../../Styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Welcome from './Welcome';
@@ -38,8 +38,8 @@ const slides = [
   },
 ];
 
-class WelcomeScreen extends Component {
-  _renderItem = ({item}) => {
+const WelcomeScreen = (props) => {
+  const _renderItem = ({item}) => {
     return (
       <Welcome
         key={item.key}
@@ -53,7 +53,7 @@ class WelcomeScreen extends Component {
     );
   };
 
-  _renderDoneButton = () => {
+  const _renderDoneButton = () => {
     return (
       <View style={Styles.buttonCircle}>
         <Icon name="md-checkmark" color="#6FCF97" size={24} />
@@ -61,21 +61,19 @@ class WelcomeScreen extends Component {
     );
   };
 
-  _onDone = () => {
-    this.props.navigation.navigate('authLanding');
+  const _onDone = () => {
+    props.navigation.navigate('authLanding');
   };
-  render() {
-    return (
-      <View style={{flex: 1}}>
-        <AppIntroSlider
-          renderItem={this._renderItem}
-          data={slides}
-          onDone={this._onDone}
-          renderDoneButton={this._renderDoneButton}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View style={{flex: 1}}>
+      <AppIntroSlider
+        renderItem={_renderItem}
+        data={slides}
+        onDone={_onDone}
+        renderDoneButton={_renderDoneButton}
+      />
+    </View>
+  );
+};
 
 export default WelcomeScreen;

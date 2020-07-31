@@ -54,11 +54,11 @@ const StepTwo = (props) => {
               color: 'rgba(0, 0, 0, 0.61)',
             }}
             editable={true}
-            onFulfill={props.handleOtpChange}
+            onFulfill={props.onChange('otp')}
             keyboardType="number-pad"
             value={props.otp}
             restrictToNumbers={true}
-            onTextChange={props.handleOtpChange}
+            onTextChange={props.onChange('otp')}
           />
         </View>
       </View>

@@ -17,7 +17,7 @@ const StepOne = (props) => {
               placeholder="Enter Your New Password"
               isSecure={true}
               value={props.password}
-              onChange={props.handlePasswordChange}
+              onChange={props.onChange('password')}
             />
           </View>
           <View style={Styles.inputMargin}>
@@ -25,7 +25,7 @@ const StepOne = (props) => {
               placeholder="Confirm Password"
               isSecure={true}
               value={props.confirmPassword}
-              onChange={props.handleConfirmPasswordChange}
+              onChange={props.onChange('confirmPassword')}
             />
           </View>
         </View>

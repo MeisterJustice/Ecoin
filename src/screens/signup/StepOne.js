@@ -24,10 +24,10 @@ const StepOne = (props) => {
         <View>
           <TextInput
             placeholder="Enter 11 Digit Mobile Number"
-            keyboardType="number-pad"
+            keyboardType="phone-pad"
             maxLength={11}
             value={props.mobileNumber}
-            onChange={props.handleMobileNumberChange}
+            onChange={props.onChange('mobileNumber')}
           />
         </View>
       </View>

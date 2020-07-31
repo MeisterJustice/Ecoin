@@ -23,7 +23,7 @@ const ForgotPasswordScreen = (props) => {
           <View>
             <TextInput
               placeholder="Enter Your Email Address"
-              keyboardType="numeric"
+              keyboardType="email-address"
               maxLength={11}
               value={props.mobileNumber}
               onChange={props.handleMobileNumberChange}
